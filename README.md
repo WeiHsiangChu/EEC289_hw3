@@ -49,4 +49,5 @@ Each file contains:
 
 1. **Clone the repository**
 2. **Ensure the iniput files are in the same directory**
-3. Run the solver `python tsp_solver.py`
+3. Run the solver:
+    `python tsp_solver.py`
