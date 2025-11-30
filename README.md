@@ -51,3 +51,6 @@ Each file contains:
 2. **Ensure the iniput files are in the same directory**
 3. Run the solver:
     `python tsp_solver.py`
+
+## Notice
+This solver is designed for general 1000-node TSP instances. While two example graphs are provided in this repository (Euclidean and Random), the code will work correctly for any valid input graph with the same format.
