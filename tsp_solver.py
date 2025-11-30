@@ -104,7 +104,7 @@ def best_path_in_one_min(distance, time_limit=60):
 
     n = distance.shape[0]
     start_candidates = list(range(n))
-    np.random.seed(0)
+    np.random.seed(42)
     np.random.shuffle(start_candidates)
 
     best_cost = np.inf
@@ -128,15 +128,21 @@ def best_path_in_one_min(distance, time_limit=60):
 
     return best_path, best_cost, cycle_counts
 
-euclidean_path = "TSP_1000_euclidianDistance.txt"
-random_path = "TSP_1000_randomDistance.txt"
 
-distance_euclidean = load_tsp_txt(euclidean_path)
-best_path_euclidean, best_cost_euclidean, cycle_counts_euclidean = best_path_in_one_min(distance_euclidean, time_limit=60)
-print("best cost for euclidean graph: ", f"{best_cost_euclidean: .2f}")
-print("cycle counts for euclidean graph: ", f"{cycle_counts_euclidean: .1e}")
+def save_solution(path, sid):
+    filename = f"solution_{sid}.txt"
 
-distance_random = load_tsp_txt(random_path)
-best_path_random, best_cost_random, cycle_counts_random = best_path_in_one_min(distance_random, time_limit=60)
-print("best cost for random graph: ", f"{best_cost_random: .2f}")
-print("cycle counts for random graph: ", f"{cycle_counts_random: .1e}")
+    with open(filename, "w") as f:
+        cycle = [node + 1 for node in path]
+        cycle.append(cycle[0])
+        line = ", ".join(str(x) for x in cycle)
+        f.write(line + "\n\n")
+
+input_graph = "YOUR_GRAPH_FILE.txt" # the path to the graph's text file
+SID = "YOUR_STUDENT_ID" # student id
+
+distance = load_tsp_txt(input_graph)
+best_path, best_cost, cycle_counts = best_path_in_one_min(distance, time_limit=60)
+print("best cost: ", f"{best_cost: .2f}")
+print("cycle evaluation counts: ", f"{cycle_counts: .1e}")
+save_solution(best_path, SID)
