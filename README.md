@@ -15,10 +15,10 @@ The algorithm follows this pipeline:
 1. **Nearest Neighbor (NN) Initialization**
    - Start from a selected node.
    - Repeatedly visit the closest unvisited node.
-   - Generates an initial Hamiltonian cycle quickly.
+   - Generates an initial cycle quickly.
 
 2. **2-opt Local Search Optimization**
-   - Iteratively removes two edges and reconnects them if the new configuration shortens the tour.
+   - Iteratively removes two edges and reconnects them if the new configuration shortens the path.
    - Continues until no further improvement is found (local optimum).
 
 3. **Multiple Random Restarts Under 60 Seconds**
@@ -31,26 +31,26 @@ The algorithm follows this pipeline:
 
 ---
 
-## Data Files
+## Input Format
 
-The repository uses the following input files (provided by the course):
-
-- `TSP_1000_euclidianDistance.txt`
-- `TSP_1000_randomDistance.txt`
-
-Each file contains:
-- First line: number of nodes (1000)
-- Second line: title (ignored)
-- Remaining lines: `(node_i, node_j, distance)`
+1. First line: number of nodes (1000)
+2. Second line: title (ignored)
+3. Remaining lines: `(node_i, node_j, distance)`
 
 ---
 
 ## How to Run the Code
 
 1. **Clone the repository**
-2. **Ensure the iniput files are in the same directory**
+2. **Modify the input in the code**
+   - file path
+   - sid
 3. Run the solver:
     `python tsp_solver.py`
 
-## Notice
-This solver is designed for general 1000-node TSP instances. While two example graphs are provided in this repository (Euclidean and Random), the code will work correctly for any valid input graph with the same format.
+## Output
+1. Terminal Output
+   - Best cycle cost
+   - Number of evaluated cycles
+2. Solution File: `solution_<SID>.txt`
+   
