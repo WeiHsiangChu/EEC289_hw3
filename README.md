@@ -53,4 +53,6 @@ The algorithm follows this pipeline:
    - Best cycle cost
    - Number of evaluated cycles
 2. Solution File: `solution_<SID>.txt`
+   - if the file does not exist, a new file will be created and the cycle will be written to the first line.
+   - if the file already exists, the cycle will be written to the next availabel line.
    
