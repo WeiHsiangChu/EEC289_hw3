@@ -138,8 +138,8 @@ def save_solution(path, sid):
         line = ", ".join(str(x) for x in cycle)
         f.write(line + "\n")
 
-input_graph = "/Users/weihsiangchu/Desktop/Desktop - Wei-Hsiang Chu's MacBook Pro/US/Fall 2025/EEC289/hw/hw3/TSP_1000_randomDistance.txt" # the path to the graph's text file
-SID = "924096132" # student id
+input_graph = "YOUR_GRAPH_FILE.txt" # the path to the graph's text file
+SID = "YOUR_STUDENT_ID" # student id
 
 distance = load_tsp_txt(input_graph)
 best_path, best_cost, cycle_counts = best_path_in_one_min(distance, time_limit=60)
