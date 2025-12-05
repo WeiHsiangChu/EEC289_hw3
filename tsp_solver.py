@@ -98,7 +98,7 @@ def two_opt(path, distance, start_time, time_limit):
     return path 
 
 
-def best_path_in_one_min(distance, time_limit=60):
+def best_path_in_one_min(distance, time_limit=59.5): # since this limit only applies to th emain search procedure, the internal optimization time limit is set to 59.5 seconds instead of 60. This safety margin guarantees that the full execution remains under the one minute onstraint.
     global cycle_counts
     cycle_counts = 0
 
@@ -139,10 +139,10 @@ def save_solution(path, sid):
         f.write(line + "\n")
 
 input_graph = "YOUR_GRAPH_FILE.txt" # the path to the graph's text file
-SID = "YOUR_STUDENT_ID" # student id
+SID = "924096132" # student id
 
 distance = load_tsp_txt(input_graph)
-best_path, best_cost, cycle_counts = best_path_in_one_min(distance, time_limit=60)
+best_path, best_cost, cycle_counts = best_path_in_one_min(distance)
 print("best cost: ", f"{best_cost: .2f}")
 print("cycle evaluation counts: ", f"{cycle_counts: .1e}")
 save_solution(best_path, SID)
