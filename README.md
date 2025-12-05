@@ -44,7 +44,6 @@ The algorithm follows this pipeline:
 1. **Clone the repository**
 2. **Modify the input in the code**
    - input_graph = "YOUR_GRAPH_FILE.txt"
-   - SID = "YOUR_STUDENT_ID"
 3. Run the solver:
     `python tsp_solver.py`
 
